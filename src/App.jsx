@@ -10,7 +10,14 @@ function App() {
   const [cart, setCart] = useState([])
   
   const addProductToCart = (product) => {
-    setCart([...cart, { ...product, quantity: 1}])
+    const productIndexInCart = cart.findIndex(
+      (cartItem) => cartItem.id === product.id)
+      if (productIndexInCart !== -1) {
+        cart[productIndexInCart].quantity++
+        setCart([...cart])
+      } else {
+        setCart([...cart, { ...product, quantity: 1}])
+      }
   }
 
   return (
