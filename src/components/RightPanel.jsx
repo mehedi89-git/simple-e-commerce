@@ -1,8 +1,13 @@
+import { Cart } from "./rightPanel/Cart";
+
 export function RightPanel() {
-    return (
+  return (
+    <div>
+      <h1>Cart</h1>
+      <button className="b1">CheckOut</button>
       <div>
-        <h1>Cart</h1>
-        <button>Check Out</button>
-      </div>  
-    );
-  }
+        <Cart cart={Cart} />
+      </div>
+    </div>
+  );
+}
