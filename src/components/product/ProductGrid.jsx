@@ -69,8 +69,7 @@ export const ProductGrid = ({ addProductToCart }) => {
         <ProductCart
          key={product.id} 
          product={product} 
-         addProductToCart={addProductToCart}
-         />
+         addProductToCart={addProductToCart} />
       ))}
     </div>
   )

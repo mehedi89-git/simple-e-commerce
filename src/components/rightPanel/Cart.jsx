@@ -1,11 +1,16 @@
 import React from 'react'
+import { CartItem } from './CartItem'
 
-export const Cart = ({ cart }) => {
+import './Cart.css'
+
+
+export const Cart = ({ cart, removeProductFromCart }) => {
   return (
         <ul>
             {cart.map((cartItem) => (
               <li key={cartItem.id}>
-                {`${cartItem.name} x ${cartItem.quantity}`}
+                <CartItem cartItem={cartItem}
+                removeProductFromCart={removeProductFromCart} />
               </li>
             ))}
           </ul>
