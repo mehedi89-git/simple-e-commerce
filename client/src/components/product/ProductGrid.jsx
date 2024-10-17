@@ -1,4 +1,5 @@
-import { useProducs } from "../../hooks";
+
+import { useProducs } from "../../api/queries";
 import { ProductCart } from "./ProductCart";
 
 import "./ProductGrid.css";
