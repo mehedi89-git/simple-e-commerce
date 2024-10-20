@@ -1,3 +1,11 @@
+import { http } from "../../common/http";
+
+
+export const getProducts2 = async () => {
+  const response = await http.get('/api/products')
+  return response.data;
+}
+    
 export const getProducts = () => [
     {
       id: 1,

@@ -1,23 +1,31 @@
 
-import { useProducs } from "../../api/queries";
+import { useProducs } from '../../api/queries';
+import axios from 'axios'
+
 import { useEffect, useState } from "react";
 
 import { ProductCart } from "./ProductCart";
 
 import "./ProductGrid.css";
 
+
  
 
 export const ProductGrid = () => {
   const [products, setProducts] = useState([])
   useEffect( () => {
-     fetch('http://localhost:5000/api/products')
-     .then(res => res.json()).then((data) =>
-       setProducts(data))
+      axios.get('http://localhost:5000/api/products').then((res) =>
+        setProducts(res.data))   
+      .catch((err) => {
+        alert("Failed to load products!");
+        console.error(err)
+      })
+
+   
       }, []);
  
   
-   // const { products } = useProducts()
+  //  const { products } = useProducts()
    
   return (
     <div className="productGrid">
