@@ -1,7 +1,8 @@
-import axios from "axios";
+import { http } from "../../common/http";
+
 
 export const getProducts = async () => {
-  const response = await axios.get('http://localhost:5000/api/products')
+  const response = await http.get('/api/products')
   return response.data;
 }
     
