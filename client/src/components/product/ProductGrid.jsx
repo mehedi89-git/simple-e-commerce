@@ -1,9 +1,6 @@
 
-import { useProducs } from '../../api/queries';
-import axios from 'axios'
 
-import { useEffect, useState } from "react";
-
+import { useProducs } from "../../api/queries";
 import { ProductCart } from "./ProductCart";
 
 import "./ProductGrid.css";
@@ -12,20 +9,8 @@ import "./ProductGrid.css";
  
 
 export const ProductGrid = () => {
-  const [products, setProducts] = useState([])
-  useEffect( () => {
-      axios.get('http://localhost:5000/api/products').then((res) =>
-        setProducts(res.data))   
-      .catch((err) => {
-        alert("Failed to load products!");
-        console.error(err)
-      })
-
-   
-      }, []);
- 
   
-  //  const { products } = useProducts()
+   const { products } = useProducs()
    
   return (
     <div className="productGrid">
