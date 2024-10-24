@@ -11,6 +11,8 @@ import "./ProductGrid.css";
 export const ProductGrid = () => {
 
    const { isLoading, products } = useProducs();
+  
+   const { products } = useProducs()
    
   return (
     <div className="productGrid">
