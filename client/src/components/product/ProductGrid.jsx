@@ -9,16 +9,18 @@ import "./ProductGrid.css";
  
 
 export const ProductGrid = () => {
-  
-   const { products } = useProducs()
+
+   const { isLoading, products } = useProducs();
    
   return (
     <div className="productGrid">
-      {products.map((product) => (
-        <ProductCart
-         key={product.id} 
-         product={product} />
-      ))}
+      {isLoading ? (
+        <h3>Loading...</h3>
+      ) : (
+        products.map((product) => (
+        <ProductCart key={product.id} product={product} />
+      )) 
+      )}
     </div>
-  )
+  );
 }
